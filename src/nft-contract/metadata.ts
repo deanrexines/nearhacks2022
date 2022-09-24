@@ -76,8 +76,10 @@ export class TokenMetadata {
         }:{
             title?: string, 
             description?: string, 
-            media?: string, 
-            mediaHash?: string, 
+            audio_media_component?: string,
+            visual_media_component?: string,
+            mash_creation?: string,
+            mediaHash?: string,
             copies?: number, 
             issuedAt?: string, 
             expiresAt?: string, 
@@ -89,7 +91,9 @@ export class TokenMetadata {
         ) {
         this.title = title // ex. "Arch Nemesis: Mail Carrier" or "Parcel #5055"
         this.description = description // free-form description
-        this.media = media // URL to associated media, preferably to decentralized, content-addressed storage
+        this.audio_media_component = audio_media_component // URL to associated AUDIO media component, preferably to decentralized, content-addressed storage
+        this.visual_media_component = visual_media_component // URL to associated VISUAL media, preferably to decentralized, content-addressed storage
+        this.mash_creation = mash_creation // URL to Mash creation, preferably to decentralized, content-addressed storage
         this.media_hash = mediaHash // Base64-encoded sha256 hash of content referenced by the `media` field. Required if `media` is included.
         this.copies = copies // number of copies of this set of metadata in existence when token was minted.
         this.issued_at = issuedAt // ISO 8601 datetime when token was issued or minted
